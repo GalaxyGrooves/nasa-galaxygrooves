@@ -6,6 +6,7 @@ import time
 import cv2
 import wave
 import sys
+import streamlit as st
 
 
 def rgb (image):
@@ -49,9 +50,9 @@ if __name__ == "__main__":
         # Generate the sine wave signal
         x = note.volume * np.sin(2 * np.pi * note.frequency * t)
         # Play the sound
-        sd.play(x, samplerate=sample_rate)
+        st.audio(x, sample_rate=sample_rate)
         # Wait until the sound is played completely
-        sd.wait()
+        #st.wait()
         # Pause between notes
         # time.sleep(0.1)
     # notes = [audio.Note(0.5, 440, 0.5), audio.Note(1, 880, 0.7), audio.Note(0.2, 1760, 0.3)]
