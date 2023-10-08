@@ -1,33 +1,37 @@
 import cv2
 import numpy as np
 
-rgb_array = cv2.imread('image.png')
 
-height, width, _ = rgb_array.shape
-square_size = 10
+def rgb (image):
+    rgb_array = cv2.imread(image)
 
-r_vals = []
-g_vals = []
-b_vals = []
+    height, width, _ = rgb_array.shape
+    square_size = 10
 
-for i in range(0, height, square_size):
-    for j in range(0, width, square_size):
-        block_height = min(square_size, height - i)
-        block_width = min(square_size, width - j)
-        block = rgb_array[i:i + block_height, j:j + block_width]
-        r = np.mean(block[:, :, 0])
-        g = np.mean(block[:, :, 1])
-        b = np.mean(block[:, :, 2])
+    r_vals = []
+    g_vals = []
+    b_vals = []
 
-        r_vals.append(r)
-        g_vals.append(g)
-        b_vals.append(b)
+    for i in range(0, height, square_size):
+        for j in range(0, width, square_size):
+            block_height = min(square_size, height - i)
+            block_width = min(square_size, width - j)
+            block = rgb_array[i:i + block_height, j:j + block_width]
+            r = np.mean(block[:, :, 0])
+            g = np.mean(block[:, :, 1])
+            b = np.mean(block[:, :, 2])
 
-average_rgb = []
-for val in zip(r_vals, b_vals, g_vals):
-    average_rgb.append(val)
+            r_vals.append(r)
+            g_vals.append(g)
+            b_vals.append(b)
 
-np_average_rgb = np.array(average_rgb)
+    average_rgb = []
+    for val in zip(r_vals, b_vals, g_vals):
+        val = np.mean(val)
+        print(val)
+        average_rgb.append(val)
+
+    return (average_rgb)
 
 # if __name__ == '__main__':
 #     manager = multiprocessing.Manager()
