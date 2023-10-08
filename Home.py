@@ -16,4 +16,3 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-view = [10, 100, 12]
