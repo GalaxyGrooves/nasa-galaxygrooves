@@ -2,11 +2,14 @@ import streamlit as st
 from PIL import Image
 import subprocess
 
+logo = Image.open('/Users/dreamerchel/Desktop/Codings/Hackerthons/nasa-galaxygrooves/assets/img/galaxyGrooveRR.png')
 
-st.write("""
-    # galaxy_grooves Test
-""")
+#Header
+col1, col2, col3 = st.columns([2, 8, 2])
+col2.image(logo, width=500)
 
+st.header("Welcome to :blue[the Sounds of Space]", divider='rainbow')
+st.write("🚀 Click select buttons! Please also check out the navi bar(left) to see more details about our project 🚀")
 
 def getM45():
     band1 = Image.open('./static/M45/band1.png')
