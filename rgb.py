@@ -1,7 +1,7 @@
 import audio
 #import get_rgb
 import numpy as np
-import sounddevice as sd
+#import sounddevice as sd
 import time
 import cv2
 import wave
