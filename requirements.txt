@@ -1,5 +1,4 @@
 sounddevice
-audio
 numpy
 opencv-python
 wave
