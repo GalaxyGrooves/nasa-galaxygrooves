@@ -50,7 +50,7 @@ if __name__ == "__main__":
         # Generate the sine wave signal
         x = note.volume * np.sin(2 * np.pi * note.frequency * t)
         # Play the sound
-        st.audio(x, sample_rate=sample_rate)
+        st.audio(x, sample_rate=44100)
         # Wait until the sound is played completely
         #st.wait()
         # Pause between notes
