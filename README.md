@@ -1,4 +1,9 @@
 # Galaxy Grooves
-Please visit our README on our organization's page to learn more about our project!
+Please visit our [README](https://github.com/GalaxyGrooves) on our organization's page to learn more about our project!
 
-Our project is deployed live onto Streamlit. Check us out at [https://galaxygrooves.streamlit.app/](https://galaxygrooves.streamlit.app/)
+# Submissions posts
+[NASA Space Apps Submission](https://www.spaceappschallenge.org/2023/find-a-team/galaxy-grooves/?tab=project)  
+[Devpost Submission](https://devpost.com/software/galaxy-grooves)
+
+# Check us out!
+Our project is deployed live onto [Streamlit](https://galaxygrooves.streamlit.app/)
