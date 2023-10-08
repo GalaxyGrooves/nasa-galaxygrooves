@@ -1,17 +1,18 @@
-import cv2
+import audio
+import get_rgb
 import numpy as np
-
+import sounddevice as sd
+import time
+import cv2
+import wave
 
 def rgb (image):
     rgb_array = cv2.imread(image)
-
     height, width, _ = rgb_array.shape
-    square_size = 10
-
+    square_size = 20
     r_vals = []
     g_vals = []
     b_vals = []
-
     for i in range(0, height, square_size):
         for j in range(0, width, square_size):
             block_height = min(square_size, height - i)
@@ -20,34 +21,12 @@ def rgb (image):
             r = np.mean(block[:, :, 0])
             g = np.mean(block[:, :, 1])
             b = np.mean(block[:, :, 2])
-
             r_vals.append(r)
             g_vals.append(g)
             b_vals.append(b)
-
     average_rgb = []
     for val in zip(r_vals, b_vals, g_vals):
         val = np.mean(val)
-        print(val)
+        #print(val)
         average_rgb.append(val)
-
     return (average_rgb)
-
-# if __name__ == '__main__':
-#     manager = multiprocessing.Manager()
-#     with multiprocessing.Pool(
-#         processes=8,
-#     ) as pool:
-#         with open('image_folder', 'r') as f:
-#             images = f.read()
-#         image_folder_lst = []
-#         for image in images:
-#             image_folder_lst.append(image)
-#         results = pool.map(main, images)
-#
-#     length = results[2]
-#     pitch = results[0]
-#     volume = results[3]
-#
-#     for val in zip(length, pitch, volume):
-#         print(val)
