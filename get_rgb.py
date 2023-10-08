@@ -1,42 +1,33 @@
 import cv2
 import numpy as np
-import multiprocessing
-# from multiprocessing import Pool
 
 rgb_array = cv2.imread('image.png')
-np_rgb_array = np.array(rgb_array)
-length = np_rgb_array.size
-width = np_rgb_array[0].size
-average_array = []
-square_sides = 10
+
+height, width, _ = rgb_array.shape
+square_size = 10
+
 r_vals = []
 g_vals = []
 b_vals = []
-for i in range(length):
-    for j in range(width):
-        r = rgb_array[i][j][0]
+
+for i in range(0, height, square_size):
+    for j in range(0, width, square_size):
+        block_height = min(square_size, height - i)
+        block_width = min(square_size, width - j)
+        block = rgb_array[i:i + block_height, j:j + block_width]
+        r = np.mean(block[:, :, 0])
+        g = np.mean(block[:, :, 1])
+        b = np.mean(block[:, :, 2])
+
         r_vals.append(r)
-        g = rgb_array[i][j][1]
         g_vals.append(g)
-        b = rgb_array[i][j][2]
         b_vals.append(b)
 
-for i in range(0, len(r_vals), 10):
-    chunk = r_vals[i:i + 10]
-    average = sum(chunk) / len(chunk)
+average_rgb = []
+for val in zip(r_vals, b_vals, g_vals):
+    average_rgb.append(val)
 
-for i in range(0, len(b_vals), 10):
-    chunk = r_vals[i:i + 10]
-    average = sum(chunk) / len(chunk)
-
-for i in range(0, len(g_vals), 10):
-    chunk = r_vals[i:i + 10]
-    average = sum(chunk) / len(chunk)
-
-
-# print(rgb_array[0][0][0])
-
-
+np_average_rgb = np.array(average_rgb)
 
 # if __name__ == '__main__':
 #     manager = multiprocessing.Manager()
