@@ -1,5 +1,6 @@
 # Ignore directory created by Python virtual environment
 env/
+.venv/
 
 # Ignore PyCharm user settings
 .idea
