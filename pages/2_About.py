@@ -20,13 +20,20 @@ st.markdown("We used data recorded by NASA's Wide-field Infrared Survey Explorer
             "[Source](https://en.wikipedia.org/wiki/Wide-field_Infrared_Survey_Explorer)")
 
 st.header("Our Sonification Process", divider='orange')
-st.markdown("")
+st.markdown("From one image, we first begin the process by forming subsections of 10 x 10 pixels and averaging the "
+            "RGB values to determine the averaged RGB value for this subsection."
+            " Then, we perform a second calculation to average the R,G,B values to compute a decimal number. "
+            "We use this decimal number as one parameter for our audio generator function.")
 
+st.markdown("#### Band 1: The Pitch  \n"
+            "We use Band 1 as the source data to determine our pitch. The location of the celestial object determines"
+            "the range for our pitch. We use the right ascension and declination values of the celestial object to delineate"
+            " the upper maximum frequency and the declination to delineate the lower minimum frequency.")
 
+st.markdown("#### Band 2: The Length  \n"
+            "We use Band 2 as the source data to determine the length of each note. The greater the intensity of the "
+            "subsection image, the longer our note.")
 
-
-
-# band 1 pitch, new pitch, new note
-# band 2 length of the note, higher intensity equals longer note
-# band 3 open to any features
-# band 4 higher the concentration of dust, louder volume
+st.markdown("#### Band 4: The Volume  \n"
+            "We use Band 4 as the source data to determine the volume of each note. The higher concentration of "
+            "dust, our note will be louder.")
