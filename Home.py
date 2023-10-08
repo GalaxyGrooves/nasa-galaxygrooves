@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import subprocess
 
-logo = Image.open('/Users/dreamerchel/Desktop/Codings/Hackerthons/nasa-galaxygrooves/assets/img/galaxyGrooveRR.png')
+logo = Image.open('./assets/img/galaxyGrooveRR.png')
 
 #Header
 col1, col2, col3 = st.columns([2, 8, 2])
