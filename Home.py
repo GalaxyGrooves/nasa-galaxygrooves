@@ -9,13 +9,13 @@ st.write("""
 
 
 def getM45():
-    band1 = Image.open('/static/M45/band1.png')
+    band1 = Image.open('./static/M45/band1.png')
     if band1.mode != "RGB":
         band1 = band1.convert("RGB")
-    band2 = Image.open('/nasa-galaxygrooves/static/M45/band2.png')
+    band2 = Image.open('./static/M45/band2.png')
     if band2.mode != "RGB":
         band2 = band2.convert("RGB")
-    band4 = Image.open('/nasa-galaxygrooves/static/M45/band4.png')
+    band4 = Image.open('./static/M45/band4.png')
     if band4.mode != "RGB":
         band4 = band4.convert("RGB")
     col4, col5, col6 = st.columns(3)
@@ -25,17 +25,17 @@ def getM45():
         st.image(band2, caption='band 2', width=150)
     with col6:
         st.image(band4, caption='band 4', width=150)
-    command = ["python", "rgb.py", "/nasa-galaxygrooves/static/M45/band1.png", '/nasa-galaxygrooves/static/M45/band2.png', '/nasa-galaxygrooves/static/M45/band4.png']
+    command = ["python", "rgb.py", "./static/M45/band1.png", './static/M45/band2.png', './static/M45/band4.png']
     subprocess.run(command)
 
 def getM33():
-    band1 = Image.open('/nasa-galaxygrooves/static/M33/band1.png')
+    band1 = Image.open('./static/M33/band1.png')
     if band1.mode != "RGB":
         band1 = band1.convert("RGB")
-    band2 = Image.open('/nasa-galaxygrooves/static/M33/band2.png')
+    band2 = Image.open('./static/M33/band2.png')
     if band2.mode != "RGB":
         band2 = band2.convert("RGB")
-    band4 = Image.open('/nasa-galaxygrooves/static/M33/band4.png')
+    band4 = Image.open('./static/M33/band4.png')
     if band4.mode != "RGB":
         band4 = band4.convert("RGB")
     col4, col5, col6 = st.columns(3)
@@ -45,17 +45,17 @@ def getM33():
         st.image(band2, caption='band 2', width=150)
     with col6:
         st.image(band4, caption='band 4', width=150)
-    subprocess.run(["python", "rgb.py", '/nasa-galaxygrooves/static/M33/band1.png', '/nasa-galaxygrooves/static/M33/band2.png', '/nasa-galaxygrooves/static/M33/band4.png'])
+    subprocess.run(["python", "rgb.py", './static/M33/band1.png', './static/M33/band2.png', './static/M33/band4.png'])
 
 
 def getNCG_1365():
-    band1 = Image.open('/nasa-galaxygrooves/static/NGC 1365/NGC 1365 Band 1.png')
+    band1 = Image.open('./static/NGC 1365/NGC 1365 Band 1.png')
     if band1.mode != "RGB":
         band1 = band1.convert("RGB")
-    band2 = Image.open('/nasa-galaxygrooves/static/NGC 1365/NGC 1365 Band 2.png')
+    band2 = Image.open('./static/NGC 1365/NGC 1365 Band 2.png')
     if band2.mode != "RGB":
         band2 = band2.convert("RGB")
-    band4 = Image.open('/nasa-galaxygrooves/static/NGC 1365/NGC 1365 Band 4.png')
+    band4 = Image.open('./static/NGC 1365/NGC 1365 Band 4.png')
     if band4.mode != "RGB":
         band4 = band4.convert("RGB")
     col4, col5, col6 = st.columns(3)
@@ -65,16 +65,16 @@ def getNCG_1365():
         st.image(band2, caption='band 2', width=150)
     with col6:
         st.image(band4, caption='band 4', width=150)
-    subprocess.run(["python", "rgb.py", '/nasa-galaxygrooves/static/NGC 1365/NGC 1365 Band 1.png', '/nasa-galaxygrooves/static/NGC 1365/NGC 1365 Band 2.png', '/nasa-galaxygrooves/static/NGC 1365/NGC 1365 Band 4.png'])
+    subprocess.run(["python", "rgb.py", './static/NGC 1365/NGC 1365 Band 1.png', './static/NGC 1365/NGC 1365 Band 2.png', './static/NGC 1365/NGC 1365 Band 4.png'])
 
 def getNCG_1097():
-    band1 = Image.open('/nasa-galaxygrooves/static/NCG 1097 /band1.png')
+    band1 = Image.open('./static/NCG 1097 /band1.png')
     if band1.mode != "RGB":
         band1 = band1.convert("RGB")
-    band2 = Image.open('/nasa-galaxygrooves/static/NCG 1097 /band2.png')
+    band2 = Image.open('./static/NCG 1097 /band2.png')
     if band2.mode != "RGB":
         band2 = band2.convert("RGB")
-    band4 = Image.open('/nasa-galaxygrooves/static/NCG 1097 /band4.png')
+    band4 = Image.open('./static/NCG 1097 /band4.png')
     if band4.mode != "RGB":
         band4 = band4.convert("RGB")
     col4, col5, col6 = st.columns(3)
@@ -84,14 +84,14 @@ def getNCG_1097():
         st.image(band2, caption='band 2', width=150)
     with col6:
         st.image(band4, caption='band 4', width=150)
-    subprocess.run(["python", "rgb.py", '/nasa-galaxygrooves/static/NCG 1097 /band1.png', '/nasa-galaxygrooves/static/NCG 1097 /band2.png', '/nasa-galaxygrooves/static/NCG 1097 /band4.png'])
+    subprocess.run(["python", "rgb.py", './static/NCG 1097 /band1.png', './static/NCG 1097 /band2.png', './static/NCG 1097 /band4.png'])
 
 
 col1, col2 = st.columns(2)
-M33 = Image.open('/nasa-galaxygrooves/static/M33/color.png')
-M45 = Image.open('/nasa-galaxygrooves/static/M45/color.png')
-NCG_1097 = Image.open('/nasa-galaxygrooves/static/NCG 1097 /color.png')
-NGC_1365 = Image.open('/nasa-galaxygrooves/static/NGC 1365/NGC 1365 color.png')
+M33 = Image.open('./static/M33/color.png')
+M45 = Image.open('./static/M45/color.png')
+NCG_1097 = Image.open('./static/NCG 1097 /color.png')
+NGC_1365 = Image.open('./static/NGC 1365/NGC 1365 color.png')
 
 with col1:
     m33_bool = False
