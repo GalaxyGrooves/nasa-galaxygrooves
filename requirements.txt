@@ -1,7 +1,7 @@
 sounddevice
 audio
 numpy
-cv2
+opencv-python
 wave
 streamlit
 subprocess
