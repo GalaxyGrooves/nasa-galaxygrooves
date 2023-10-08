@@ -1,4 +1,4 @@
-import sounddevice as sd
+#import sounddevice as sd
 class Note:
     def __init__(self, duration, frequency, volume):
         topHertz=1500-(int)(200)#(ra)
