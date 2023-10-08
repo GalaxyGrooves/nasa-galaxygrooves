@@ -1,10 +1,19 @@
 import streamlit as st
 
-st.write("""
-    # galaxy_grooves Test
+st.image("/Users/dreamerchel/Desktop/Codings/Hackerthons/nasa-galaxygrooves/assets/img/galaxyGroove.png", width=300, use_column_width=False)
 
-    Here is our webapp
+st.markdown("<span style='color:white'>rddfdsssfdded</span>",
+             unsafe_allow_html=True)
 
-    render test
-
-""")
+# Background color_CSS
+st.markdown(
+    f"""
+    <style>
+    .stApp{{
+        background-color: black;
+        }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+view = [10, 100, 12]
