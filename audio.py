@@ -17,7 +17,7 @@ class Note:
             self.frequency=100
 # Initialize audio parameters
 sample_rate = 44100  # Sample rate in Hz
-sd.default.samplerate = sample_rate
+#sd.default.samplerate = sample_rate
 
 
 
